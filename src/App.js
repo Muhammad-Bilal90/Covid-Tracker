@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import covid19 from "./covid-19.svg";
 import CountryPicker from "./components/CountryPicker/CountryPicker";
 import Chart from "./components/chart/chart";
-import OutlinedCard from './practice';
+import OutlinedCard from './components/Cards/Cards';
 
 function App() {
   const [fconfirmed, setConfirmed] = useState();
