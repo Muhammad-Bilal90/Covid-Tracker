@@ -17,18 +17,17 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-        const { confirmed, recovered, deaths, lastUpdate } = await getData();
+      const { confirmed, recovered, deaths, lastUpdate } = await getData();
 
-        setConfirmed(confirmed.value)
-        setRecovered(recovered.value)
-        setDeaths(deaths.value)
-        setDate(lastUpdate)
+      setConfirmed(confirmed.value)
+      setRecovered(recovered.value)
+      setDeaths(deaths.value)
+      setDate(lastUpdate)
     }
-    
+
     fetchData();
   }, []);
-  console.log(date, 5646);
-  
+
   async function selectCountry(country) {
     const { confirmed, recovered, deaths } = await getData(country);
 
@@ -56,22 +55,22 @@ function App() {
         <Grid item container direction="row" justify="center">
           <Grid item>
             <Typography color="textSecondary">
-            {`Last Updated : ${new Date(date).toDateString()}`}
+              {`Last Updated : ${new Date(date).toDateString()}`}
             </Typography>
           </Grid>
         </Grid>
-        <OutlinedCard 
-        confirmed={fconfirmed}
-        recovered={frecovered}
-        deaths={fdeaths}
+        <OutlinedCard
+          confirmed={fconfirmed}
+          recovered={frecovered}
+          deaths={fdeaths}
         />
         <Grid item container direction="row" justify="center">
           <Grid item xs={12} sm={8} md={6}>
             <Chart
-                confirmed={fconfirmed}
-                recovered={frecovered}
-                deaths={fdeaths}
-                country={sCountry}
+              confirmed={fconfirmed}
+              recovered={frecovered}
+              deaths={fdeaths}
+              country={sCountry}
             />
           </Grid>
         </Grid>
