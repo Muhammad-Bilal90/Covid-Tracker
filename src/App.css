@@ -1,0 +1,17 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  width: 100% !IMPORTANT;
+  margin: 0px !IMPORTANT;
+}
+
+.main1 {
+  padding: 0px !IMPORTANT;
+}
+
+.main3 {
+  width: 100% !IMPORTANT;
+}
