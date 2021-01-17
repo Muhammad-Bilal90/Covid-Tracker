@@ -17,26 +17,26 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-        const { confirmed, recovered, deaths } = await getData();
+        const { confirmed, recovered, deaths, lastUpdate } = await getData();
 
         setConfirmed(confirmed.value)
         setRecovered(recovered.value)
         setDeaths(deaths.value)
+        setDate(lastUpdate)
     }
     
     fetchData();
   }, []);
+  console.log(date, 5646);
   
   async function selectCountry(country) {
-    const { confirmed, recovered, deaths, lastUpdate } = await getData(country);
+    const { confirmed, recovered, deaths } = await getData(country);
 
     setCountry(country)
     setConfirmed(confirmed.value)
     setRecovered(recovered.value)
     setDeaths(deaths.value)
-    setDate(lastUpdate)
   }
-
   return (
     <div>
       <Grid className="main" container direction="column" spacing={2}>
@@ -56,7 +56,7 @@ function App() {
         <Grid item container direction="row" justify="center">
           <Grid item>
             <Typography color="textSecondary">
-              {`Last Updated : ${new Date(date).toDateString()}`}
+            {`Last Updated : ${new Date(date).toDateString()}`}
             </Typography>
           </Grid>
         </Grid>
